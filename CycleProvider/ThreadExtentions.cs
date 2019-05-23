@@ -8,7 +8,7 @@ namespace CycleProvider
 {
     public static class ThreadExtentions
     {
-        public static string Sleep(this int miliseconds, bool withLog = false)
+        private static string Sleep(this int miliseconds, bool withLog = false)
         {
             string returnValue;
 
