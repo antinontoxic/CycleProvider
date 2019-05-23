@@ -21,7 +21,7 @@ namespace CycleProvider
             Id = ++Counter;
         }
 
-        public new string ToString()
+        public override string ToString()
         {
             return $"Person {Id} of {Counter} => {LastName} {FirstName} was born in {BirthDate}";
         }
