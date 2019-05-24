@@ -4,16 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FAF64243-12D5-4187-BAAC-D542995C0AC0}</ProjectGuid>
-    <OutputType>Library</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>CycleProvider.Contracts</RootNamespace>
-    <AssemblyName>CycleProvider.Contracts</AssemblyName>
+    <ProjectGuid>{7C40A033-FD06-4066-8C67-E1A4243D3246}</ProjectGuid>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>CycleProvider.ConsoleParallel</RootNamespace>
+    <AssemblyName>CycleProvider.ConsoleParallel</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -21,10 +22,9 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <DocumentationFile>
-    </DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -43,15 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CycleProviderEventArgs.cs" />
-    <Compile Include="HrException.cs" />
-    <Compile Include="IGenericInvIn.cs" />
-    <Compile Include="IGenericInvOut.cs" />
-    <Compile Include="IPerson.cs" />
-    <Compile Include="InvalidOperationExceptionMessages.cs" />
-    <Compile Include="ICycleProvider.cs" />
-    <Compile Include="OneItemBagException.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CycleProvider.Contracts\CycleProvider.Contracts.csproj">
+      <Project>{FAF64243-12D5-4187-BAAC-D542995C0AC0}</Project>
+      <Name>CycleProvider.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CycleProvider\CycleProvider.csproj">
+      <Project>{a26f04c1-12e8-4de9-a8d2-f41f310e3b4a}</Project>
+      <Name>CycleProvider</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
